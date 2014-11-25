@@ -1,7 +1,7 @@
 require "Prct10M17"
 require "spec_helper"
 
-# ***** Practica 9 *********************************************************************
+# ***** Examen e Interfaz **************************************************************
 # **************************************************************************************
 describe List do
 before :each do
@@ -40,6 +40,11 @@ describe "Examen" do
  end
  it "# Respuestas" do
    expect(@e1.respuestas().to_s).to eq("[1, 2, 3]")
+ end
+ it "# Invertir" do
+   expect(@e1.respuestas().to_s).to eq("[1, 2, 3]")
+   expect(@e1.invertir(@e1.preguntas()).to_s).to eq("[Pregunta 3 \n E\n F\n G\n H \n, Pregunta 2 \n V\n F \n, Pregunta 1 \n A\n B\n C\n D \n]")
+   expect(@e1.invertir(@e1.respuestas()).to_s).to eq("[3, 2, 1]")
  end
 end
 
