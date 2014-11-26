@@ -1,16 +1,25 @@
 # create a Struct with :value and :next
 Node = Struct.new(:value, :next, :prev)
-
+# === Clase List
+#  Clase _List_ compuesta por:
+# * Método initialize
+# * Método each
+# * Método removeFirst
+# * Método add
+# * Método size
+# * Método to_s
+#
 class List
  include Enumerable
+ # head
  attr_accessor :head
-
+ # Método initialize
  def initialize(first_value=nil)
    if first_value
      @head = Node.new(first_value, nil)
    end
  end
- 
+ # Método each
  def each
    actual = @head
    while actual != nil
@@ -18,7 +27,7 @@ class List
      actual = actual.next
    end
  end
- 
+ # Método removeFirst
  def removeFirst
    current_node = @head
    if current_node[:next]
@@ -28,7 +37,7 @@ class List
      @head = nil
    end
  end
-
+ # Método add
  def add(value)
   if value.kind_of?(Array)
     index = 0
@@ -69,7 +78,7 @@ class List
     nil
   end
  end
-
+ # Método size
  def size()
   current_node = @head
   contador = 1
@@ -80,7 +89,7 @@ class List
 
   return contador
  end
- 
+ # Método to_s
  def to_s
   if @head
     s = ""

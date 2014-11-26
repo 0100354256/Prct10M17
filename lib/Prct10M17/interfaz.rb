@@ -1,11 +1,18 @@
 require "Prct10M17/examen"
-
+# === Clase Interfaz
+#  Clase _Interfaz_ compuesta por:
+# * Método initialize
+# * Método comprobar
+# * Método simular
+#
 class Interfaz
+  # examen
   attr_accessor :examen
+  # Método initialize
   def initialize(examen)
     @examen = examen
   end
-  
+  # Método comprobar
   def comprobar(respuestas)
     correctas = @examen.respuestas()
 
@@ -21,7 +28,7 @@ class Interfaz
 
     return fallos
   end
-
+  # Método simular
   def simular()
     puts @examen.preguntas()
 
